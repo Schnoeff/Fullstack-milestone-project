@@ -34,7 +34,29 @@
     <title>Harvalet {% block extra-title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header> 
+    <header class="container-fluid fixed-top">
+        <div class="row">
+            <div class="col-12">
+                <a herf="{% url 'home' %}" class="home-link">Harvalet</a>
+            </div>
+            <div class="col-12">
+                <form method="GET" action="">
+                    <div class="input-group">
+                        <input class="form-control" type="text" name="q" placeholder="Search for packages">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-orange" type="submit">
+                                <span class="search-icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+            <div class="col-12"></div>
+        </div>
+
+    </header> 
    
     {% if messages %}
         <div class="message-container"></div>
