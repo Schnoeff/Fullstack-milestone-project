@@ -33,13 +33,15 @@
 
     <title>Harvalet {% block extra-title %}{% endblock %}</title>
   </head>
+
   <body>
-    <header class="container-fluid fixed-top">
+    <header class="container-fluid fixed-top"> <!-- This is the heading container -->
         <div class="row">
             <div class="col-12">
-                <a herf="{% url 'home' %}" class="home-link">Harvalet</a>
+                <a herf="{% url 'home' %}" class="home-link">Harvalet</a> <!-- This is the page title -->
             </div>
-            <div class="col-12">
+            <!-- This is the page searchbar -->
+            <div class="col-12 col-md-4"> 
                 <form method="GET" action="">
                     <div class="input-group">
                         <input class="form-control" type="text" name="q" placeholder="Search for packages">
@@ -53,9 +55,46 @@
                     </div>
                 </form> 
             </div>
-            <div class="col-12"></div>
+            <!-- This is what is included in the account dropdown -->
+            <div class="col-12 col-md-4">
+                <ul class="list-inline list-unstyled">
+                    <li class="inline-item item dropdown">
+                        <a class="nav-button" href="#" id="user-admin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                            <div><i class="fas fa-user"></i></div>
+                            <p>My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %} <!-- If the user has a valid account -->
+                                {% if request.user.is_superuser %} <!-- If the user is a valid admin -->
+                                    <a href="" class="dropdown-item">Product Admin</a> <!-- If the user is an admin then display product administration functions -->
+                                {% endif %}
+                                <a href="" class="dropdown-item">My Account</a> <!-- When signed in you get access to your account page -->
+                                <a href="{% url 'account_logout' %" class="dropdown-item">Logout</a> <!-- Option to sign out of the page -->
+                            {% else %} 
+                                <a href="{% url 'account_signup' %" class="dropdown-item">Create an account</a> <!-- If the user doe not have an account they can create one here -->
+                                <a href="{% url 'account_login' %" class="dropdown-item">Login</a> <!-- Returning users can use their existing credentials to sign in to their account -->
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item"> <!-- This is the shopping basket section -->
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
+                            <div class="text-center">
+                                <div><i class="fas fa-basket"></i></div>
+                                <p>
+                                    {% if grand_total %} <!-- If a total exists from adding items then display the total to 2 decimal places -->
+                                         £{{ grand_total|floatformat:2 }}
+                                     {% else %}
+                                         £0.00 <!-- Otherwise indicate the basket is empty with no value displayed -->
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>  
+            </div>
         </div>
-
     </header> 
    
     {% if messages %}
