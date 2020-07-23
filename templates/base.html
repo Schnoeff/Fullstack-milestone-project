@@ -37,14 +37,14 @@
   <body>
     <header class="container-fluid fixed-top"> <!-- This is the heading container -->
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a herf="{% url 'home' %}" class="home-link">Harvalet</a> <!-- This is the page title -->
             </div>
             <!-- This is the page searchbar -->
-            <div class="col-12 col-md-4"> 
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"> 
                 <form method="GET" action="">
-                    <div class="input-group">
-                        <input class="form-control" type="text" name="q" placeholder="Search for packages">
+                    <div class="input-group w-100">
+                        <input class="form-control  border border-black rounded-0" type="text" name="q" placeholder="Search for packages">
                         <div class="input-group-append">
                             <button class="form-control btn btn-orange" type="submit">
                                 <span class="search-icon">
@@ -56,16 +56,16 @@
                 </form> 
             </div>
             <!-- This is what is included in the account dropdown -->
-            <div class="col-12 col-md-4">
-                <ul class="list-inline list-unstyled">
+            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 ">
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="inline-item item dropdown">
                         <a class="nav-button" href="#" id="user-admin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                             <div><i class="fas fa-user"></i></div>
-                            <p>My Account</p>
+                            <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %} <!-- If the user has a valid account -->
                                 {% if request.user.is_superuser %} <!-- If the user is a valid admin -->
                                     <a href="" class="dropdown-item">Product Admin</a> <!-- If the user is an admin then display product administration functions -->
