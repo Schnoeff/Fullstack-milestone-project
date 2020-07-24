@@ -3,11 +3,18 @@ html {
 }
 
 body {
-    background: url('https://image.shutterstock.com/image-vector/orange-black-abstract-business-backgroundvector-600w-741177460.jpg') no-repeat center center fixed;
+    background-color:rgba(0, 0, 0, 0.918);
     background-size: cover;
     height: calc(100vh - 164px);
-    color: orange;
-    font-family: 'Lato';
+    color: darkorange;
+    font-family: 'Oswald', sans-serif;
+}
+
+.home-image{
+    background:url('https://www.mustang6g.com/forums/media/project-6gr-wheels-on-a-ruby-red-ford-mustang-gt-front-side-close-up-view.9040/full') no-repeat center center fixed;
+    background-size:cover;
+    
+    
 }
 
 /* from Bulma */
@@ -21,6 +28,7 @@ body {
 
 .logo-font {
     text-transform: uppercase;
+    font-size:72px;
 }
 
 .main-logo-link {
@@ -28,32 +36,36 @@ body {
 }
 
 .shop-now-button {
-    background: black;
+    background: darkorange;
     color: white;
-    min-width: 260px;
+    min-width: 200px;
 }
 
-.btn-black {
-    background: black;
+.btn-orange {
+    background:darkorange;
     color: white;
 }
-
+/* when the search button is hovered .... */
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
+.btn-orange:hover,
+.btn-orange:active,
+.btn-orange:focus {
+    background: orange;
     color: white;
 }
 
-.text-black {
-    color: #000 !important;
+.text-orange {
+    color:darkorange !important;
 }
 
-.border-black {
-    border: 1px solid black !important;
+.border-white {
+    border: 1px solid darkorange !important;
+}
+
+.black-background{
+    background-color:black;
 }
 
 /* -------------------------------- Media Queries */
@@ -61,7 +73,7 @@ body {
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
   .container {
-    max-width: 80%;
+    max-width: 100%;
   }
 }
 

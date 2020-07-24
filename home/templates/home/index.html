@@ -1,25 +1,28 @@
-<!doctype html>
 {% extends "base.html" %}
 {% load static %}
 
-{% block page-header %}
-<div class="container page-header">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
-{% block content %}
-    <div class="container">
+{% block page_header %}
+    <div class="container header-container">
         <div class="row">
             <div class="col"></div>
-                <h1 class="display-5">Time to give your car the clean it deserves!
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="home-image row h-100">
+            <div class="col-12 col-md-12 my-auto">
+                <h1 class="display-4 logo-font text-center text-black">
+                    Give your car the clean it deserves!
                 </h1>
-            <div>
-                <h3>
-                    <a href="" class="package-browse-button btn btn-lg"> Browse Now! </a>
-                </h3>
+                <div class="my-5">
+                    <h4>
+                        <a href="" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse Packages</a>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>
+   
 {% endblock %}
