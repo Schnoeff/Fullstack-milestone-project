@@ -15,7 +15,7 @@ body {
     background-size:cover;    
 }
 
-/* from Bulma */
+
 .icon {
     align-items: center;
     display: inline-flex;
@@ -36,6 +36,12 @@ body {
 .header-font {
     text-transform: uppercase;
     font-size:58px;  
+    text-decoration: underline;    
+}
+
+.description-font {
+    font-size:32px;
+    font-family: 'Recursive', sans-serif;
 }
 
 .main-logo-link {
@@ -86,6 +92,7 @@ body {
 .text-white{
     color:white;
 }
+
 
 /* -------------------------------- Media Queries */
 
