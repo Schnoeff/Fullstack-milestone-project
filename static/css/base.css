@@ -24,13 +24,15 @@ body {
     width: 4rem;    
 }
 
-.green-icon{
-    color:rgb(1, 255, 1);
-}
+
 
 .logo-font {
     text-transform: uppercase;
     font-size:72px;    
+}
+
+.nav-font{
+    font-size:52px;
 }
 
 .header-font {
@@ -69,13 +71,15 @@ body {
     color: white;
 }
 
-.text-orange {
-    color:darkorange !important;
+.dropdown-font{
+    font-size:38px;
 }
 
 .list-font{
     font-size:34px;
 }
+
+/* -------------------------------- Colors */
 
 .border-white {
     border: 1px solid darkorange !important;
@@ -92,6 +96,15 @@ body {
 .text-white{
     color:white;
 }
+
+.text-orange {
+    color:darkorange !important;
+}
+
+.green-icon{
+    color:rgb(1, 255, 1);
+}
+
 
 
 /* -------------------------------- Media Queries */
