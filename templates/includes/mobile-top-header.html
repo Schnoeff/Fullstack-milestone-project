@@ -8,9 +8,9 @@
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="">
             <div class="input-group w-100">
-                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our packages">
+                <input class="form-control rounded-0" type="text" name="q" placeholder="Search our packages">
                 <div class="input-group-append">
-                    <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                    <button class="form-control form-control rounded-0" type="submit">
                         <span class="icon">
                             <i class="fas fa-search"></i>
                         </span>
@@ -25,32 +25,32 @@
         <div class="text-center">
             <div><i class="fas fa-user fa-lg"></i></div>
              <p class="my-0">My Account</p>
-                 </div>
-                     </a>
-                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is_authenticated %} <!-- If the user has a valid account -->
-                                {% if request.user.is_superuser %} <!-- If the user is a valid admin -->
-                                    <a href="" class="dropdown-item">Product Admin</a> <!-- If the user is an admin then display product administration functions -->
-                                {% endif %}
-                                <a href="" class="dropdown-item">My Account</a> <!-- When signed in you get access to your account page -->
-                                <a href="{% url 'account_logout' %" class="dropdown-item">Logout</a> <!-- Option to sign out of the page -->
-                            {% else %} 
-                                <a href="{% url 'account_signup' %" class="dropdown-item">Create an account</a> <!-- If the user does not have an account they can create one here -->
-                                <a href="{% url 'account_login' %" class="dropdown-item">Login</a> <!-- Returning users can use their existing credentials to sign in to their account -->
-                            {% endif %}
-                        </div>
+        </div>
+    </a>
+        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %} <!-- If the user has a valid account -->
+                {% if request.user.is_superuser %} <!-- If the user is a valid admin -->
+                    <a href="" class="dropdown-item">Product Admin</a> <!-- If the user is an admin then display product administration functions -->
+                {% endif %}
+                    <a href="" class="dropdown-item">My Account</a> <!-- When signed in you get access to your account page -->
+                    <a href="{% url 'account_logout' %" class="dropdown-item">Logout</a> <!-- Option to sign out of the page -->
+                {% else %} 
+                    <a href="{% url 'account_signup' %" class="dropdown-item">Create an account</a> <!-- If the user does not have an account they can create one here -->
+                    <a href="{% url 'account_login' %" class="dropdown-item">Login</a> <!-- Returning users can use their existing credentials to sign in to their account -->
+                {% endif %}
+        </div>
 </li>
 <li class="list-inline-item"> <!-- This is the shopping basket section -->
-        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-orange{% endif %} nav-link" href="">
-            <div class="text-center">
-                 <div><i class="fas fa-shopping-basket"></i></div>
-                    <p class="my=0">
-                         {% if grand_total %} <!-- If a total exists from adding items then display the total to 2 decimal places -->
-                              £{{ grand_total|floatformat:2 }}
-                         {% else %}
-                              £0.00 <!-- Otherwise indicate the basket is empty with no value displayed -->
-                         {% endif %}
-                      </p>
-                 </div>
-            </a>
+     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-orange{% endif %} nav-link d-block d-lg-none" href="">
+        <div class="text-center">
+            <div><i class="fas fa-shopping-basket"></i></div>
+             <p class="my=0">
+                 {% if grand_total %} <!-- If a total exists from adding items then display the total to 2 decimal places -->
+                       £{{ grand_total|floatformat:2 }}
+                 {% else %}
+                      £0.00 <!-- Otherwise indicate the basket is empty with no value displayed -->
+                 {% endif %}
+             </p>
+        </div>
+    </a>
 </li>
