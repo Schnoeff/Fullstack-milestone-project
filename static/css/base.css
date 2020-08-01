@@ -75,6 +75,10 @@ body {
     font-size:38px;
 }
 
+.dropdown{
+    margin:0;
+}
+
 .list-font{
     font-size:34px;
 }

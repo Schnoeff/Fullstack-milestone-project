@@ -1,1 +1,30 @@
-[{"pk": 1, "model": "packages.package", "fields": {"sku": "pp5001340155", "name": "Standard package", "description": "Pressure wash, Shampoo bodywork, Dried off with a leather cloth, Wheel arches cleaned, Outside washed, Tyres dressed", "price": 10, "category": 6, "rating": 4.3, "image_url": "https://oxfordmobilevalet.com/media/image/car-valet.jpg", "image": "car-valet.jpg"}}, [{"pk": 2, "model": "packages.package", "fields": {"sku": "pp5001340156", "name": "Mini valet", "description": "Pressure wash, Shampoo bodywork, Dried off with a leather cloth, Wheel arches cleaned, Outside washed, Tyres dressed, Interior hoovered, Plastics cleaned and treated, Rubber mats washed", "price": 20, "category": 6, "rating": 4.6, "image_url": "https://oxfordmobilevalet.com/media/image/car-valet.jpg", "image": "car-valet.jpg"}}
+[
+  {
+    "pk": 1,
+    "model": "packages.package",
+    "fields": {
+      "sku": "pp5001340155",
+      "name": "Standard package",
+      "description": "Pressure wash, Shampoo bodywork, Dried off with a leather cloth, Wheel arches cleaned, Outside washed, Tyres dressed",
+      "price": 10,
+      "category": 6,
+      "rating": 4.3,
+      "image_url": "https://oxfordmobilevalet.com/media/image/car-valet.jpg",
+      "image": "car-valet.jpg"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "packages.package",
+    "fields": {
+      "sku": "pp5001340156",
+      "name": "Mini valet",
+      "description": "Pressure wash, Shampoo bodywork, Dried off with a leather cloth, Wheel arches cleaned, Outside washed, Tyres dressed, Interior hoovered, Plastics cleaned and treated, Rubber mats washed",
+      "price": 20,
+      "category": 6,
+      "rating": 4.6,
+      "image_url": "https://oxfordmobilevalet.com/media/image/car-valet.jpg",
+      "image": "car-valet.jpg"
+    }
+  }
+]

@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0001_initial'),
+        ('packages', '0001_initial'),
     ]
 
     operations = [
@@ -20,10 +20,10 @@ class Migration(migrations.Migration):
                 ('description', models.TextField()),
                 ('price', models.DecimalField(decimal_places=2, max_digits=6)),
                 ('rating', models.DecimalField(blank=True, decimal_places=2, max_digits=6, null=True)),
-                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='products.Category')),
+                ('category', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, to='packages.Category')),
             ],
         ),
         migrations.DeleteModel(
-            name='Product',
+            name='Package',
         ),
     ]
