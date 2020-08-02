@@ -1,1 +1,18 @@
-{"pk": 1, "model": "packages.category", "fields": {"name": "offers", "friendly_name": "Offers"}}
+[
+{
+   "pk":1,
+   "model":"packages.category",
+   "fields":{
+      "name":"offers",
+      "friendly_name":"Offers"
+   }
+},
+{
+   "pk":2,
+   "model":"packages.category",
+   "fields":{
+      "name":"packages",
+      "friendly_name":"Packages"
+   }
+}
+]
