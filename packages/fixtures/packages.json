@@ -6,8 +6,7 @@
       "sku":"pp5001340155",
       "name":"Standard package",
       "description":"Pressure wash Shampoo bodywork Dried off with a leather cloth Wheel arches cleaned Outside washed Tyres dressed",
-      "price":10,
-      "category":6,
+      "price":10,      
       "rating":4.3
     }
   },
@@ -18,8 +17,7 @@
       "sku":"pp5001600425",
       "name":"Mini valet",
       "description":"Pressure wash, Shampoo bodywork, Dried off with a leather cloth, Wheel arches cleaned, Outside washed, Tyres dressed, Interior hoovered, Plastics cleaned and treated, Rubber mats washed",
-      "price": 20,
-      "category":6,
+      "price": 20,      
       "rating":4.6
     }
   }
