@@ -12,9 +12,30 @@
 {% block content %}
      <div class="container packages">
         <div class="row">
-            <div class="col">
-                {{ packages }}
+            <div class="col-12 text-center">
+                <h3 class="header-font">Packages</h3>
+            </div>
+
+        <div class="container">
+            <div class="row col-12 col-md-12 col-sm-12">
+                {% for package in packages %}                  
+                    <div class="card package-card text-center lightgrey-background" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item card-header lightgrey-background">{{ package.name }}</li>
+                            <li class="list-group-item card-font lightgrey-background">{{ package.description }}</li>
+                            <li class="list-group-item card-font lightgrey-background">Price - £ {{ package.price }}</li>
+                            {% if package.rating %}
+                                <li class="list-group-item card-font lightgrey-background">Customer rating - {{ package.rating }}</li>
+                            {% else %}
+                                <li class="list-group-item card-font lightgrey-background">Not yet rated</li>
+                            {% endif %}
+                            <button href="" class="package-button" type="submit"> Choose this package</button>
+                        </ul>
+                    </div>                   
+                {% endfor %}
             </div>
         </div>
      </div>
+     </div>
 {% endblock %}
+
