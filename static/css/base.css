@@ -24,7 +24,9 @@ body {
     width: 4rem;    
 }
 
-
+.packages{
+    padding:250px;
+}
 
 .logo-font {
     text-transform: uppercase;
