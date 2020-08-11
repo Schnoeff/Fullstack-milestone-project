@@ -85,6 +85,10 @@ body {
     font-size:34px;
 }
 
+.cards{
+    padding-left:50px;
+}
+
 /* -------------------------------- Colors */
 
 .border-white {
