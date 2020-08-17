@@ -29,9 +29,28 @@
                             {% else %}
                                 <li class="list-group-item card-font lightgrey-background">Not yet rated</li>
                             {% endif %}
-                            <button href="" class="package-button" type="submit"> Choose this package</button>
+
+                             <form class="form text-center" action="{% url 'add_to_bag' package.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="col-12">                                
+                                <div hidden class="form-group w-50">
+                                    <div class="input-group">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ package.id }}" id="id_qty_{{ package.id }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <a href="{% url 'packages' %}" class="btn btn-outline-black rounded-0 mt-5">                                    
+                                </a>
+                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </div>
+                    </form>   
                         </ul>
                     </div>                   
+                                    
                 {% endfor %}
             </div>
         </div>
