@@ -15,6 +15,10 @@ body {
     background-size:cover;    
 }
 
+.shopping-bag{
+    margin:20px;
+    padding-top:40px;
+}
 
 .icon {
     align-items: center;
@@ -26,26 +30,6 @@ body {
 
 .packages{
     padding-top:250px;
-}
-
-.logo-font {
-    text-transform: uppercase;
-    font-size:72px;    
-}
-
-.nav-font{
-    font-size:52px;
-}
-
-.header-font {
-    text-transform: uppercase;
-    font-size:58px;  
-    text-decoration: underline;    
-}
-
-.description-font {
-    font-size:32px;
-    font-family: 'Recursive', sans-serif;
 }
 
 .main-logo-link {
@@ -73,20 +57,45 @@ body {
     color: white;
 }
 
-.dropdown-font{
-    font-size:38px;
-}
-
 .dropdown{
     margin:0;
 }
 
+.cards{
+    padding-left:50px;
+}
+/* -------------------------------- Fonts */
+
+.logo-font {
+    text-transform: uppercase;
+    font-size:72px;    
+}
+.nav-font{
+    font-size:52px;
+}
+.header-font {
+    text-transform: uppercase;
+    font-size:58px;  
+    text-decoration: underline;    
+}
+.dropdown-font{
+    font-size:38px;
+}
 .list-font{
     font-size:34px;
 }
 
-.cards{
-    padding-left:50px;
+.description-font {
+    font-size:32px;
+    font-family: 'Recursive', sans-serif;
+}
+
+.font-underline{
+    text-decoration: underline;
+}
+
+.bag-font{
+    font-size:26px;
 }
 
 /* -------------------------------- Colors */
@@ -121,6 +130,10 @@ body {
 
 .green-icon{
     color:rgb(1, 255, 1);
+}
+
+.text-red{
+    color:red;
 }
 
 /* -------------------------------- Package Card */
