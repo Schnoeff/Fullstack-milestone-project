@@ -35,13 +35,13 @@
 								<p class="text-orange bag-font">{{ item.package.name }}</p>
 							</td>
 							<td>
-								<p class=" text-orange bag-font">${{ item.package.price }}</p>
+								<p class=" text-orange bag-font">£ {{ item.package.price }}</p>
 							</td>
 							<td>
 								<p class="text-orange bag-font">{{ item.quantity }}</p>
 							</td>
                             <td>
-                                <a class="delete-item bag-font text-orange" id="remove_{{ item.item_id }}">Remove package</a> 
+                                <a class="btn btn-orange btn-lg" id="remove_{{ item.item_id }}">Remove package</a> 
                             </td>
 						</tr>                        
                                                     
@@ -68,12 +68,14 @@
 				</div>
 			</div>
 		</div>
+</div>
 		{% endblock %}
+
         <script type="text/javascript">
         $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];        
-        var url = `/bag/remove/${itemId}`;        
+        var url = `/bag/remove/${itemId}/`;        
 
         $.post(url, data)
          .done(function() {
