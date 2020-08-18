@@ -29,7 +29,5 @@ def remove_bag_item(request, item_id):
     bag = request.session.get('bag', {})
     del bag[item_id]
 
-    bag.pop(item_id)
-
     request.session['bag'] = bag
     return redirect(reverse('view_bag'))
