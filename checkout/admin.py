@@ -14,7 +14,7 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInLine,)
 
     fields = ('order_number', 'date', 'full_name', 'email',
-              'phone_number', 'postcode', 'country', 'county',
+              'phone_number', 'postcode', 'county',
               'town_or_city', 'street_address1', 'street_address2',
               'order_total', 'grand_total',)
 

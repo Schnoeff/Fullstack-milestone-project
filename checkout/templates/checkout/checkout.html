@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+<div class="container header-container">
+	<div class="row">
+		<div class="col"></div>
+	</div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container packages">
+	<div class="row">
+		<div class="col-12 text-center">
+			<h3 class="header-font">Order Form</h3>
+		</div>
+
+		<div class="container shopping-bag">
+			<div class="col-12">
+                <div class="row">
+                    <p class="text-center"> Please fill out the following form to complete your order and start counting down the days</p>
+                        <form action="checkout" method="POST" id="payment_form">
+                         {% csrf_token %}
+                            <fieldset class="text-orange list-font">
+                                <p class="header-font">Personal Details</p>
+                                {{ order_form.full_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                                {{ order_form.phone_number | as_crispy_field }}                        
+                            </fieldset>
+                            <fieldset class="text-orange list-font">
+                                <p class="header-font">Home address</p>                        
+                                {{ order_form.county | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
+                                {{ order_form.postcode | as_crispy_field }}
+                                {{ order_form.street_address1 | as_crispy_field }}
+                                {{ order_form.street_address2 | as_crispy_field }}
+                            </fieldset>                            
+                            <fieldset>
+                                <div class="form-check form-check-inline float-right mr-0">
+							        {% if user.is_authenticated %}
+								        <label class="form-check-label" for="id-save-info">Save this information for future use</label>
+                                        <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+							        {% else %}
+								        <label class="form-check-label" for="id-save-info">
+                                            <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                            <a class="text-info" href="{% url 'account_login' %}">login</a> to store this information for future use
+                                        </label>
+							        {% endif %}
+						        </div>
+                            </fieldset>
+                            <fieldset>
+                                <h3 class="header-font">Payment</h3> 
+                                <div class="text-orange" id="card-payment">
+
+                                </div>
+                                <div class="text-orange" id="card-error">
+
+                                </div>
+                            </fieldset>
+                            <p class="text-orange">Order total = {{ grand.total | floatformat:2 }} </p> 
+                            <button class="btn btn-orange" id="submit-order">
+                                <span>Complete your order</span>
+                            </button>                                            
+                        </form>
+                    </div>        
+			    </div>
+		    </div>
+	    </div>
+    </div>
+
+		{% endblock %}
+
+        
