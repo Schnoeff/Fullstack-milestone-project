@@ -124,6 +124,10 @@ body {
     color:white;
 }
 
+.text-black{
+    color:black;
+}
+
 .text-orange {
     color:darkorange !important;
 }
