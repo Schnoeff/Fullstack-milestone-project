@@ -40,10 +40,27 @@ As an admin, I want the ability to be able to create new packages to the website
 
 ### Existing features
 
+* A sorting system which allows shoppers to sort the existing packages by price, rating and name in both ascending and descending aiding in readability and user accessibility.
 
+* A search bar allows users to search for keywords making it easier for experienced shopper to quickly find what they are looking for.
+
+* A basket sysetm the allows users to store packages in one area until they are ready to pay.
+
+* A secure payment system allowing users to make payments for their chosen packages.
+
+* An email system which automatically ends out confirmtion emails upon ordering a package.
+
+* An account area when users can make and use an account where they can track pervious orders and save banking information for future use if neccessary.
+
+* An admin section where a super user can make changes to the websites product lists by completing a form made in the django administration page.
 
 ### Future feature implementations
 
+* The first feature i would like to add is a chat section where any user can join with an account and start chatting and interacting with other people on the page. This would prove useful to first of all increase customer interaction and to also help users who are stuck or unsure about a certain section of the website.
+
+* The second feature i would like to add is the ability to allow a user to make specific reviews and comments about a chosen package which can then be viewed by others and sorted in the same way as the packages on the page. This could also make in impact on the customer rating section located within teach package card.
+
+* The third feature i would like to add is giving the user the ability to upload a befor and after image to some sort of gallery page which can also be interacted with by all other users such as commenting and likes.
 
 
 ## Technologies Used
@@ -56,6 +73,9 @@ As an admin, I want the ability to be able to create new packages to the website
 
 * [Python] 
   * I used the python language to construct all of the apps used in my project.
+  
+* [Django]
+  * I used Django as a base to create all of my individual apps allowing me to utilise them in the future as chunks rather than one massive app.
  
 * [JavaScript] 
   * I used JavaScript to create a document ready function for the page buttons.
@@ -78,6 +98,14 @@ I also used a code validator website (https://validator.w3.org/) for both my CSS
 Another method of testing I used was sending my website out to other people. I sent the server port link out to a few of my family and friends and ask them to have a play around with the site including but not limited to the navigation features or forms I had. After they had a go with the site I then asked them to give me some feedback on what was good, what's was bad and what could be improved.
 
 My website also adapts to different screen sizes and resolutions in a way that as the screen gets smaller the layout will change by shifting around the elements to hold a similar style while also being professional and functional. I have developed my website to be responsive as a whole in which I mean that as you switch resolutions to medium or small resolutions the whole page will stay very similar until you cross certain resolution checkpoints. For example, I have each of my recipe card data entries presented as a col 6 following the grid layout system featured on materialize. From what I have experience with other websites over the years and through the feedback I have been given this layout would work well with modern day internet styles. It makes each item easy to view and makes them all stand out due to them covering the entire width of the screen.
+
+## Testing a couple of user stories
+
+* To find test if the social media buttons work, click on the icons located at the bottom of the page and see if they direct you to the relevent site.
+
+* To test if the basket is working correctly try and add random packages to the basket and see if the correct packages are displayed on the basket page along with the correct prices.
+
+* To test the sorting features navigate to the all packages text and click on each of the various dropdown sections and check to see if the packages have displayed in that desired order.
 
 ## Bugs and problems I ran into
 
@@ -110,7 +138,7 @@ My website also adapts to different screen sizes and resolutions in a way that a
 
 Some unadaptable aspects of this project have come directly from the Boutique Ado example project such as settings.py in the project level folder names 'Harvalet'. I used this from the example because i wanted all of my settings to function correctly however I did change the names of the apps to fit my ideas. 
 
-All of the directories and files were adapted from the example mentioned above and I absolutely did not have any intention to copy the design and style of the example it was just the more backend parts I struggled with. I needed the extra support and validation from some aspects of the django framework due to not being 100% comfortable with the coding language.
+All of the directories and files were adapted from the example mentioned above and I absolutely did not have any intention to copy the design and style of the example it was just the more backend parts I struggled with. I needed the extra support and validation from the videos for some aspects of the django framework due to not being 100% comfortable with the coding language.
 
 Inspiration form this project came from my dad who has always wanted to have a professional car valeting service.
 
