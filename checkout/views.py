@@ -1,23 +1,57 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
+from django.conf import settings
 
 from .forms import OrderForm
+from bag.contexts import bag_contents
 
+import stripe
 # Create your views here.
 
 
 def checkout(request):
-    bag = request.session.get('bag', {})
-    if not bag:
-        messages.error(request, "You don't have any items in your bag yet!")
-        return redirect(reverse('packages'))
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+
+
+    if request.method == 'POST':
+        bag = request.session.get('bag', {})
+
+        form_data = {
+            'full_name': request.POST['full_name'],
+            'email': request.POST['email'],
+            'phone_number': request.POST['phone_number'],
+            'county': request.POST['county'],
+            'town_or_city': request.POST['town_or_city'],
+            'postcode': request.POST['postcode'],
+            'street_address1': request.POST['street_address1'],
+            'street_address2': request.POST['street_address2'],
+        }
+        order_form = OrderForm(form_data)
+
+    else:
+        bag = request.session.get('bag', {})
+        if not bag:
+            messages.error(request, "You don't have any items in your bag yet!")
+            return redirect(reverse('packages'))
+
+        current_bag = bag_contents(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
+
+    print(intent)
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51HJMCYHEgiPOT6f6HGio8jgwY5PIJwUOWj5Yf8au53lJljowOz5RRo4pHnDOUCmvGji8Zivm8tBwKOtwm8C2v7MQ00hZaMvt3F',
-        'client_secret': 'client_secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret_key': intent.client_secret,
     }
 
     return render(request, template, context)
