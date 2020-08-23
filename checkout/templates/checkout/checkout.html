@@ -49,10 +49,11 @@
 							        {% endif %}
 						        </div>
                             </fieldset>
+                            <br>
                             <fieldset>
                                 <h3 class="header-font">Payment</h3> 
-                                <div class="text-orange" id="card-payment">
-
+                                <br>
+                                <div id="card-element">
                                 </div>
                                 <div class="text-orange" id="card-error">
 
@@ -71,4 +72,9 @@
 
 		{% endblock %}
 
-        
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ stripe_client_secret_key|json_script:"id_client_secret_key" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{% endblock %}
