@@ -28,6 +28,20 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
         }
         order_form = OrderForm(form_data)
+        if order_form.is_valid():
+            order.form.save()
+            for item_id, item_data in bag.items():
+                try:
+                    package = Package.objects.get(id=item_id)
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            package=package,
+                        )
+                        order_line_item.save()
+                        else:
+                            
+
 
     else:
         bag = request.session.get('bag', {})
