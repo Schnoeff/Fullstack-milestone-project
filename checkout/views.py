@@ -49,7 +49,7 @@ def checkout(request):
                         )
                         order_line_item.save()
 
-            request.session['save-info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
 
         else:
