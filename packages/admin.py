@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Package, Category
+from .models import Package
 
 # Register your models here.
 
@@ -16,4 +16,3 @@ class PackageAdmin(admin.ModelAdmin):
 ordering = ('sku',)
 
 admin.site.register(Package, PackageAdmin)
-admin.site.register(Category)
