@@ -20,7 +20,7 @@
 			<div class="col-12">
                 <div class="row">
                     <p class="text-center"> Please fill out the following form to complete your order and start counting down the days</p>
-                        <form action="checkout" method="POST" id="payment_form">
+                        <form action="{% url 'checkout' %}" method="POST" id="payment_form">
                          {% csrf_token %}
                             <fieldset class="text-orange list-font">
                                 <p class="header-font">Personal Details</p>
@@ -60,7 +60,7 @@
                                 </div>
                             </fieldset>
                             <p class="text-orange">Order total = £ {{ grand_total | floatformat:2 }} </p> 
-                            <button class="btn btn-orange" id="submit-button">
+                            <button id="submit-button" class="btn btn-orange">
                                 <span>Complete your order</span>
                             </button>                                            
                         </form>

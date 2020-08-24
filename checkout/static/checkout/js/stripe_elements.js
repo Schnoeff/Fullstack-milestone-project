@@ -42,23 +42,16 @@ form.addEventListener('submit', function(ev) {
     }
   }).then(function(result) {
     if (result.error) {
-        var errorDiv = document.getElementById('card-error');
-      // Show error to your customer (e.g., insufficient funds)
+        var errorDiv = document.getElementById('card-error');      
       var html = `
         <span>${result.error.message}</span>
     `;
     $(errorDiv).html(html);
     card.update({'disable' : false});
     $('#submit-button').attr('disabled', false)
-    } else {
-      // The payment has been processed!
+    } else {      
       if (result.paymentIntent.status === 'succeeded') {
-          form.submit();
-        // Show a success message to your customer
-        // There's a risk of the customer closing the window before callback
-        // execution. Set up a webhook or plugin to listen for the
-        // payment_intent.succeeded event that handles any business critical
-        // post-payment actions.
+          form.submit();       
       }
     }
   });

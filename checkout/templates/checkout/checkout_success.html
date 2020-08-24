@@ -57,18 +57,22 @@
         <div class="col-12">
             <p class="text-orange"> Postcode: {{ order.postcode }} </p>
         </div>
+        {% if order.county %}
         <div class="col-12">
             <p class="text-orange"> County: {{ order.county }} </p>
         </div>
+        {% endif %}
         <div class="col-12">
             <p class="text-orange"> Town/City: {{ order.town_or_city }} </p>
         </div>
         <div class="col-12">
             <p class="text-orange"> Street address 1: {{ order.street_address1 }} </p>
         </div>
+        {% if order.street_address2 %}
         <div class="col-12">
             <p class="text-orange"> Street address 2: {{ order.street_address2 }} </p>
         </div>
+        {% endif %}
         <div class="col-12">
             <p class="text-orange"> Total costs : {{ order.grand_total }} </p>
         </div>       

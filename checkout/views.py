@@ -37,8 +37,17 @@ def checkout(request):
                     order_line_item = OrderLineItem(
                         order=order,
                         package=package,
+                        quantity=item_data,
                     )
                     order_line_item.save()
+                else:
+                    for quantity in item_data():
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            package=package,
+                            quantity=quantity,
+                        )
+                        order_line_item.save()
 
             request.session['save-info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
@@ -51,14 +60,14 @@ def checkout(request):
             else:
                 messages.error(request, 'Oops, there was an error')
 
-        current_bag = bag_contents(request)
-        total = current_bag['grand_total']
-        stripe_total = round(total * 100)
-        stripe.api_key = stripe_secret_key
-        intent = stripe.PaymentIntent.create(
-            amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY,
-        )
+    current_bag = bag_contents(request)
+    total = current_bag['grand_total']
+    stripe_total = round(total * 100)
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
 
     order_form = OrderForm()
     template = 'checkout/checkout.html'
