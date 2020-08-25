@@ -49,16 +49,16 @@ def checkout(request):
                         )
                         order_line_item.save()
 
-            request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+        request.session['save_info'] = 'save-info' in request.POST
+        return redirect(reverse('checkout_success', args=[order.order_number]))
 
+    else:
+        bag = request.session.get('bag', {})
+        if not bag:
+            messages.error(request, "You don't have any items in your bag yet!")
+            return redirect(reverse('packages'))
         else:
-            bag = request.session.get('bag', {})
-            if not bag:
-                messages.error(request, "You don't have any items in your bag yet!")
-                return redirect(reverse('packages'))
-            else:
-                messages.error(request, 'Oops, there was an error')
+            messages.error(request, 'Oops, there was an error')
 
     current_bag = bag_contents(request)
     total = current_bag['grand_total']
