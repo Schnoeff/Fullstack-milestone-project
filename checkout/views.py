@@ -69,6 +69,8 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
 
+    print("TYRING STUFF", intent.client_secret)
+
     order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
@@ -82,7 +84,6 @@ def checkout(request):
 
 def checkout_success(request, order_number):
 
-    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Your order has been placed!! \
         Your order number is {order_number}. A confirmation \
@@ -98,4 +99,3 @@ def checkout_success(request, order_number):
         }
 
         return render(request, template, context)
-
