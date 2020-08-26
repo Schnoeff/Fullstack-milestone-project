@@ -30,14 +30,13 @@ class Order(models.Model):
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
-
-def save(self, *args, **kwargs):
-    if not self.order.number:
-        self.order_number = self.generate_order_number()
+    def save(self, *args, **kwargs):
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
 
-        def __str__(self):
-            return self.order_number
+    def __str__(self):
+        return self.order_number
 
 
 class OrderLineItem(models.Model):

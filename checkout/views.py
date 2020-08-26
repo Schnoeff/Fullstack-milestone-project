@@ -57,29 +57,27 @@ def checkout(request):
         if not bag:
             messages.error(request, "You don't have any items in your bag yet!")
             return redirect(reverse('packages'))
-        else:
-            messages.error(request, 'Oops, there was an error')
 
-    current_bag = bag_contents(request)
-    total = current_bag['grand_total']
-    stripe_total = round(total * 100)
-    stripe.api_key = stripe_secret_key
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-    )
+        current_bag = bag_contents(request)
+        total = current_bag['grand_total']
+        stripe_total = round(total * 100)
+        stripe.api_key = stripe_secret_key
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+        )
 
-    print("TYRING STUFF", intent.client_secret)
+        print("TYRING STUFF", intent.client_secret)
 
-    order_form = OrderForm()
-    template = 'checkout/checkout.html'
-    context = {
-        'order_form': order_form,
-        'stripe_public_key': stripe_public_key,
-        'client_secret_key': intent.client_secret,
-    }
+        order_form = OrderForm()
+        template = 'checkout/checkout.html'
+        context = {
+            'order_form': order_form,
+            'stripe_public_key': stripe_public_key,
+            'client_secret_key': intent.client_secret,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
 
 
 def checkout_success(request, order_number):
