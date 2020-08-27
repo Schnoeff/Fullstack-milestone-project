@@ -114,6 +114,8 @@ My website also adapts to different screen sizes and resolutions in a way that a
 
 I have created a test account for you to user if you did want to access the /admin panel. The username is Test and the password is Milestone1.
 
+In order for the admins to make any changes to the packages listed on my website they would need to be a superuser and they would need to navigate to the /admin panel by typing /admin at the end of the address bar at the top of the screen. The reason I didn't implement an internal method was mainly due to time constraints not allowing to take the proper time required to make sure it was tested and functioning cas intended.
+
 ## Testing a couple of user stories
 
 * To find test if the social media buttons work, click on the icons located at the bottom of the page and see if they direct you to the relevent site.
