@@ -85,6 +85,15 @@ As an admin, I want the ability to be able to create new packages to the website
 
 * [HTML]
   * I used HTML as my base coding language throughout the page.
+
+* [Googlefonts]
+  * I used google fonts throughout the project to improve the look of my site https://fonts.google.com/.
+
+* [Stripe]
+  * I used Stripe to create a secure checkout system allowing the user to make secure purchases on my website https://stripe.com/docs/payments/checkout
+
+* [Json]
+  * I used Json to trasmit package data to and from the server allowing it to be stored and used on my website.
  
 
 ## Testing
@@ -97,7 +106,13 @@ I also used a code validator website (https://validator.w3.org/) for both my CSS
 
 Another method of testing I used was sending my website out to other people. I sent the server port link out to a few of my family and friends and ask them to have a play around with the site including but not limited to the navigation features or forms I had. After they had a go with the site I then asked them to give me some feedback on what was good, what's was bad and what could be improved.
 
+When testing my page button links it was as simple as clicking on the buttons and checkign to see if they went to the desired location or not and then checking for any errors in the inspect errors tab.
+
+To test that my Stripe email confirmation system was working correctly all i had to do was place a test order on the website then check back on Gitpod and look at the terminal where it printed out the email template that i had pre-written and this worked successfully.
+
 My website also adapts to different screen sizes and resolutions in a way that as the screen gets smaller the layout will change by shifting around the elements to hold a similar style while also being professional and functional. I have developed my website to be responsive as a whole in which I mean that as you switch resolutions to medium or small resolutions the whole page will stay very similar until you cross certain resolution checkpoints. For example, I have each of my recipe card data entries presented as a col 6 following the grid layout system featured on materialize. From what I have experience with other websites over the years and through the feedback I have been given this layout would work well with modern day internet styles. It makes each item easy to view and makes them all stand out due to them covering the entire width of the screen.
+
+I have created a test account for you to user if you did want to access the /admin panel. The username is Test and the password is Milestone1.
 
 ## Testing a couple of user stories
 
@@ -144,5 +159,7 @@ All of the directories and files were adapted from the example mentioned above a
 Inspiration form this project came from my dad who has always wanted to have a professional car valeting service.
 
 I must also metion that without the help of some of the tutors especially Tim my website would not be fucntion as it is now.
+
+The information for the car packages used in my website were taken directly from [https://www.valetsonyourdrive.com/car-valeting/packages-pricing/] to get legitimate package descriptions and prices.
 
 
