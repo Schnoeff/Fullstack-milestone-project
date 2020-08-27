@@ -10,10 +10,8 @@ from django.dispatch import receiver
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     """
-    All fields are optional for the user
-    """
-    default_full_name = models.CharField(max_length=50, null=True, blank=True) 
-    default_email = models.EmailField(max_length=254, null=True, blank=True)
+    All fields are optional for the user to fill in
+    """    
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_postcode = models.CharField(max_length=20, null=True, blank=True)
     default_town_or_city = models.CharField(max_length=40, null=True, blank=True)
