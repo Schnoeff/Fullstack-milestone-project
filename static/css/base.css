@@ -190,6 +190,14 @@ body {
 
 .footer{
     width:100%;
+    position:fixed;    
+    left: 0;
+    bottom: 0;    
+    text-align: center;    
+}
+
+.footer-margin{
+    margin-bottom:100px;
 }
 
 .social-links
