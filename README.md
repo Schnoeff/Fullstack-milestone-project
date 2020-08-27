@@ -137,6 +137,7 @@ My website also adapts to different screen sizes and resolutions in a way that a
 ## Credits
 
 Some unadaptable aspects of this project have come directly from the Boutique Ado example project such as settings.py in the project level folder names 'Harvalet'. I used this from the example because i wanted all of my settings to function correctly however I did change the names of the apps to fit my ideas. 
+I have followed the course material through all of the parts I found particuarly trick to do myself such as the stripe payment and profiles sections purely for learning purposes as I am still very new to coding as a whole and in no way am I claiming to have written all of it by myself. 
 
 All of the directories and files were adapted from the example mentioned above and I absolutely did not have any intention to copy the design and style of the example it was just the more backend parts I struggled with. I needed the extra support and validation from the videos for some aspects of the django framework due to not being 100% comfortable with the coding language.
 
