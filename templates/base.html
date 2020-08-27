@@ -75,7 +75,7 @@
                                 {% if request.user.is_superuser %} <!-- If the user is a valid admin -->
                                     <a href="" class="dropdown-item">Package Admin</a> <!-- If the user is an admin then display package administration functions -->
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Account</a> <!-- When signed in you get access to your account page -->
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Account</a> <!-- When signed in you get access to your account page -->
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a> <!-- Option to sign out of the page -->
                             {% else %} 
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Create an account</a> <!-- If the user does not have an account they can create one here -->
