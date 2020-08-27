@@ -1,7 +1,11 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Order, OrderLineItem
 from packages.models import Package
+from profiles.models import UserProfile
 
 import json
 import time
@@ -11,6 +15,24 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, order):
+        customer_email = order.mail
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order}
+        )
+
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [customer_email]
+        )
 
     def handle_event(self, event):
         return HttpResponse(
@@ -24,7 +46,22 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        grand_total = round(intent.charges.data[0].amount / 100, 2)
+
+        for field, value in billing_details.address.items():
+            if value == "":
+                billing_details.address[field] = None
+
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.defualt_phone_number = billing_details.phone,
+                profile.defualt_county = billing_details.address.state,
+                profile.defualt_town_or_city = billing_details.address.city,
+                profile.defualt_street_address1 = billing_details.address.line1,
+                profile.defualt_street_address2 = billing_details.address.line2,
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -47,6 +84,7 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if order_exists:
+            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
@@ -55,6 +93,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name=billing_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     postcode=billing_details.address.postal_code,
@@ -88,6 +127,7 @@ class StripeWH_Handler:
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
+        self._send_confirmation_email(order)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | Your order was created successfully',
             status=200)
