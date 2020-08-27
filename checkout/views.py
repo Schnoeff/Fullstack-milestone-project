@@ -52,7 +52,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_bag = json.dumps(bag)
-            order.save()    
+            order.save()
             for item_id, item_data in bag.items():
                 package = Package.objects.get(id=item_id)
                 if isinstance(item_data, int):

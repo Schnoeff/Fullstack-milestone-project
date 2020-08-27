@@ -24,7 +24,7 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        grand_total = round(intent.data.charges[0].amount / 100, 2)
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
 
         order_exists = False
         attempt = 1
@@ -34,12 +34,10 @@ class StripeWH_Handler:
                     full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
-                    postcode__iexact=billing_details.postcode,
-                    county__iexact=billing_details.state,
-                    town_or_city__iexact=billing_details.city,
-                    street_address1__iexact=billing_details.line1,
-                    street_address2__iexact=billing_details.line2,
-                    grand_total=grand_total,
+                    county__iexact=billing_details.address.state,
+                    town_or_city__iexact=billing_details.address.city,
+                    street_address1__iexact=billing_details.address.line1,
+                    street_address2__iexact=billing_details.address.line2,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
@@ -55,15 +53,15 @@ class StripeWH_Handler:
         else:
             order = None
             try:
-                order = order.objects.create(
+                order = Order.objects.create(
                     full_name=billing_details.name,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
-                    postcode=billing_details.postcode,
-                    county=billing_details.state,
-                    town_or_city=billing_details.city,
-                    street_address1=billing_details.line1,
-                    street_address2=billing_details.line2,
+                    postcode=billing_details.address.postal_code,
+                    county=billing_details.address.state,
+                    town_or_city=billing_details.address.city,
+                    street_address1=billing_details.address.line1,
+                    street_address2=billing_details.address.line2,
                     original_bag=bag,
                     stripe_pid=pid,
                 )

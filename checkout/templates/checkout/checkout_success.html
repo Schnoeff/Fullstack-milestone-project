@@ -34,13 +34,10 @@
         </div>
         <div class="col-12">
             <p class="text-orange description-font"> Quantity: {{ item.quantity }} </p>
-        </div>
-        <div class="col-12">
-            <p class="text-orange description-font"> Price: {{ item.price }} </p>
-        </div>
+        </div>        
         </div>     
         {% endfor %}
-
+        <br>
     <div class="row">
         <div class="col-12">
             <p class="text-orange font-underline list-font"> Billing details </p>
@@ -74,7 +71,7 @@
         </div>
         {% endif %}
         <div class="col-12">
-            <p class="text-orange description-font"> Total costs : {{ order.grand_total }} </p>
+            <p class="text-orange description-font"> Total costs : £ {{ order.order_total }} </p>
         </div>       
         </div> 
     </div>		
