@@ -98,6 +98,10 @@ body {
     font-size:26px;
 }
 
+.accordion{
+    margin-top: 30px;
+}    
+
 /* -------------------------------- Colors */
 
 .border-orange {
