@@ -52,7 +52,7 @@ As an admin, I want the ability to be able to create new packages to the website
 
 * An account area when users can make and use an account where they can track pervious orders and save banking information for future use if neccessary.
 
-* An admin section where a super user can make changes to the websites product lists by completing a form made in the django administration page.
+* An admin section where a super user can make changes to the websites package lists by completing a form made in the django administration page.
 
 ### Future feature implementations
 
