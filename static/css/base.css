@@ -186,3 +186,59 @@ body {
     padding-left:40px;
     
 }
+/*--------------------------------- Footer Styles */
+
+.footer{
+    width:100%;
+}
+
+.social-links
+{
+   font-size:30px;
+}
+.fa-pinterest{
+    color:orange;
+    padding:15px;
+    }
+.fa-facebook{
+    color:orange;
+    padding:15px;
+}
+.fa-instagram{
+    color:orange;
+    padding:15px;
+}
+.fa-youtube{
+    color:orange;
+    padding:15px;
+}
+.fa-linkedin{
+    color:orange;
+    padding:15px;
+}
+.fa-twitter{
+    color:orange;
+    padding:15px;
+}
+.fa-pinterest:hover{
+     color:darkorange;
+ }
+ .fa-facebook:hover{
+    color:darkorange;
+}
+.fa-instagram:hover{
+    color:darkorange;
+}
+.fa-youtube:hover{
+    color:darkorange;
+}
+.fa-linkedin:hover{
+    color:darkorange;
+}
+.fa-twitter:hover{
+    color:darkorange;
+}
+
+.footer{
+    padding-top:10px;
+}
