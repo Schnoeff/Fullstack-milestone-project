@@ -1,6 +1,6 @@
 Dear {{ order.full_name }}
 
-This email has been sent to you as confirmation for your recent {{ order.order_total }} order for the {{ item.package.name }} at {{ order.date }}. 
+This email has been sent to you as confirmation for your recent £{{ order.order_total }} order for the {{ item.package.name }} at {{ order.date }}. 
 
 We are very happy to recieve your order today and we will be in contact with you on {{ order.phone_number }} or via this email address {{ order.email }} as soon as we can to confirm booking times.
 
