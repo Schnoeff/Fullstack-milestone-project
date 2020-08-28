@@ -133,23 +133,35 @@ In order for the admins to make any changes to the packages listed on my website
 
 * Deploying to github
 
-  * My first step when deploying to github was creating my app.py file and getting the basic functionality in place so I could insure that my page connections were working smoothly. 
+  * My first step when deploying to github was creating my first app called (home) and adding my index.html while making sure to get all of the basic functionality in place so I could insure that my page connections were working smoothly. 
   
-  * Then, in the terminal window I typed 'git add .' to add all of my intial files to the stagin area.
+  * Then, in the terminal window I typed 'git add .' to add all of my intial files to the staging area.
   
   * Then, also in the terminal window I typed 'git commit -m "Initial commit"' outlining what I had done between commits. 
   
   * Finally, I typed 'git push' which pushed my commits to github where it was stored ready for future commits.
+
+  * When creating my environment variables I used the Gitpod settings menu and i was easily able to store all of my keys in a table. When it came to running the workspace all I needed to do was run "export STRIPE_PUBLIC_KEY='publickey'","export STRIPE_SECRET_KEY='secretkey'" to get stripe up and runnign and then "STRIPE_WHSECRET_KEY='webhookkey'" to get all of my webhooks up and running.
   
 * Deploying to heroku
 
   * My first step in deploying my website to Heroku was creating an account to host my project on the Heroku website.
   
-  * Then, I needed to navigate to the 'new' button which then gave me the option to create a new app. When choosing the name for my app I attempted to make the name as close to the project theme as possible so I chose to name it 'Recipe-storages'
-  
-  * After creating a new app i was ready to deploy my initial commits to Heroku. I did this by navigating to the deploy page and clicking on the Github account linking button. I chose to use this method as oppose to using the Herkou CLI and pushing to the master branch every time. It just made everything simpler and more organised.
-  
-  * Once my Github and Heroku accounts were linked i needed to input the correct PORT and IP figures i used in my app.py file which were PORT:0,0,0,0 and IP:5000. To do this I went on the settings page on Heroku and revealed the config vars for my app. This is where i input my figures for the port and ip as well as my Mongodb URI and Name which was used to make sure my database would connect to the Heroku app. 
+  * Create requirements.txt file in Gitpod workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
+
+  * Using the New buton, Create a new app with apropriate title and server in Heroku creating a link between Gitpod and Heroku allowing for all commits to Github accessible to Heroku.
+
+  * To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py.
+
+  * To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1.
+
+  * In order for the Heroku server to communicate properly and run the server i had to specify the Config Vars in Heroku. To do this go to Settings tab then Config Variables and input
+
+  * The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
+
+  * Once the project was linked to Heroku i was then able to click on the open app button.
+
+  * Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser details created in the gitpod terminal. 
 
 ## Credits
 
