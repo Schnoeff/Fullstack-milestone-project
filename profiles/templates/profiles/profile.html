@@ -44,10 +44,10 @@
         </button>
       </h2>
     </div>
-
+    {% for item in order.lineitems.all %}
     <div id="collapse{{order.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#collapse{{order.id}}">
       <div class="card-body">
-      <p class="text-orange font-underline list-font"> Order details </p>
+      <p class="text-orange font-underline list-font"><i class="fas fa-chevron-down orange-icon"></i> Order details </p>
         </div>        
         <div class="col-12">
             <p class="text-orange card-font"> Order Date: {{ order.date }} </p>
@@ -57,10 +57,11 @@
         </div>
         <div class="col-12">
             <p class="text-orange card-font"> Quantity: {{ item.quantity }} </p>
-        </div>        
+        </div>
+        {% endfor %}       
         <hr>
         <div>
-            <p class="text-orange font-underline list-font"> Billing details </p>
+            <p class="text-orange font-underline list-font"><i class="fas fa-chevron-down orange-icon"></i> Billing details </p>
         </div>        
         <div class="col-12">
             <p class="text-orange card-font"> Name: {{ order.full_name }} </p>
