@@ -12,6 +12,7 @@ from profiles.models import UserProfile
 
 import stripe
 import json
+
 # Create your views here.
 
 
