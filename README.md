@@ -13,27 +13,27 @@ When a user clicks on my site their goal would be to quickly but carefully searc
 
 ## User Stories
 
-As a shopper, I want to be able to search for packages by price in both ascending and descending order so that I can see what packages I have enough money for.
+ * As a shopper, I want to be able to search for packages by price in both ascending and descending order so that I can see what packages I have enough money for.
 
-As a shopper, I want to be able to search for packages in alphabetical order in both ascending and descending order so that I can get a clearer view of the packages list.
+ * As a shopper, I want to be able to search for packages in alphabetical order in both ascending and descending order so that I can get a clearer view of the packages list.
 
-As a shopper, I want to be able to search for packages based off of user reviews in both ascending and descending order so that I can see what other shoppers have viewed as being the best value for money.
+ * As a shopper, I want to be able to search for packages based off of user reviews in both ascending and descending order so that I can see what other shoppers have viewed as being the best value for money.
 
-As a shopper, I want to be able to search for a keyword related to what sort of package I want so that I can quickly find what packages are on offer for my specific needs.
+ * As a shopper, I want to be able to search for a keyword related to what sort of package I want so that I can quickly find what packages are on offer for my specific needs.
 
-As a shopper, I want to be able to add valeting packages to a basket where the price is totaled up so that I can clearly see how much money I am about to spend and what I have chosen.
+ * As a shopper, I want to be able to add valeting packages to a basket where the price is totaled up so that I can clearly see how much money I am about to spend and what I have chosen.
 
-As a shopper, I want to be sent email conformation when I purchase a package so I can keep records of what I have paid for.
+ * As a shopper, I want to be sent email conformation when I purchase a package so I can keep records of what I have paid for.
 
-As a user, I want to be able to create a profile where I can recall previous orders and also save personal details for future use so that I can save time in the future a purchase the same package as before.
+ * As a user, I want to be able to create a profile where I can recall previous orders and also save personal details for future use so that I can save time in the future a purchase the same package as before.
 
-As a user, I want to be able to follow the social media pages so I can keep up to date with new packages and package offers.
+ * As a user, I want to be able to follow the social media pages so I can keep up to date with new packages and package offers.
 
-As a user, I want the website to be fully responsive so that I can view the website on both mobile and tablet formats as well as desktop.
+ * As a user, I want the website to be fully responsive so that I can view the website on both mobile and tablet formats as well as desktop.
 
-As an admin, I want the ability to be able to manage existing packages and add them to the packages page so that I can correct any mistakes and change package descriptions.
+ * As an admin, I want the ability to be able to manage existing packages and add them to the packages page so that I can correct any mistakes and change package descriptions.
 
-As an admin, I want the ability to be able to create new packages to the website, so that I can draw in different types of customers with different needs.
+ * As an admin, I want the ability to be able to create new packages to the website, so that I can draw in different types of customers with different needs.
 
 
 ## Features
