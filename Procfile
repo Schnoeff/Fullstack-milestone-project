@@ -1,0 +1,1 @@
+web: gunicorn harvalet.wsgi:application
